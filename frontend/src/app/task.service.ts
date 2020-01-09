@@ -16,6 +16,14 @@ export class TaskService {
       return this.webReqService.post(`lists/${listId}/tasks`, {title});
   }
 
+  updateTask(title: string, listId: string, taskId: string){
+      return this.webReqService.patch(`lists/${listId}/tasks/${taskId}`, {title});
+  }
+
+  deleteTask(listId: string, taskId: string){
+      return this.webReqService.delete(`lists/${listId}/tasks/${taskId}`);
+  }
+
   getLists(){
     return this.webReqService.get('lists');
   }

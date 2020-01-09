@@ -23,13 +23,13 @@ export class TaskViewComponent implements OnInit {
       console.log(params);
       this.taskService.getTasks(params.listId).subscribe((tasks: Task[]) => {
         this.tasks = tasks;
-        console.log(tasks);
+        
       })
     })
 
     this.taskService.getLists().subscribe((lists: List[]) => {
       this.lists = lists;
-      console.log(lists);
+      
     })
   }
 

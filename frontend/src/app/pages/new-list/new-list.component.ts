@@ -11,12 +11,12 @@ export class NewListComponent implements OnInit {
 
   constructor(private taskService: TaskService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() {  
   }
 
   createList(title: string){
     this.taskService.createList(title).subscribe((list: List) => {
-      console.log(list);
+      
       this.router.navigate(['/lists', list._id])
        
     });

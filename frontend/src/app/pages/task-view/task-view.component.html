@@ -27,7 +27,7 @@
 
       <!-- Task elements -->
       <div class="task" *ngFor="let task of tasks">
-        <div class="task-text">
+        <div [routerLink]="['./tasks', task._id]" class="task-text">
             <p>{{ task.title }}</p>
           </div>
       </div>

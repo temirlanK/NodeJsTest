@@ -17,7 +17,7 @@ export class NewTaskComponent implements OnInit {
       this.route.params.subscribe(
     (params: Params) => {
       this.listId = params['listId'];
-      //console.log(this.listId);
+      
       }
     )
   }
@@ -25,8 +25,7 @@ export class NewTaskComponent implements OnInit {
   createTask(title: string){
     this.taskService.createTask(title, this.listId).subscribe((newTask: Task) => {
       this.router.navigate(['../'], { relativeTo: this.route});
-      console.log(newTask)
-    });
+          });
   }
 
 }
